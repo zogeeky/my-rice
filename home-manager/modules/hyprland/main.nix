@@ -2,6 +2,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
+    configType = "hyprlang";
     settings = {
       env = [
         # Hint Electron apps to use Wayland
@@ -66,14 +67,15 @@
       };
 
 
-      dwindle = {
-        preserve_split = true;
-      };
-
       master = {
         new_status = "slave";
         new_on_top = true;
         mfact = 0.5;
+      };
+
+      dwindle = {
+        preserve_split = true;
+        smart_split = false;
       };
 
       misc = {

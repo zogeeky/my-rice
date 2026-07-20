@@ -25,10 +25,12 @@ in {
       "$mainMod,       R, exec, $fileManager"
       "$mainMod,       F, togglefloating,"
       "$mainMod,       D, exec, $menu --show drun"
-      "$mainMod,       P, pin,"
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod,       N, exec, swaync-client -t"
       "$mainMod,       W, exec, ${booksScript}/bin/open_books"
+      "$mainMod,       P, pseudo,"
+      "$mainMod,       J, layoutmsg, togglesplit,"
+      "$mainMod,       L, exec, loginctl lock-session"
 
       # Moving focus
       "$mainMod, left, movefocus, l"
@@ -75,6 +77,10 @@ in {
       # Scratchpad
       "$mainMod,       S, togglespecialworkspace,  magic"
       "$mainMod SHIFT, S, movetoworkspace, special:magic"
+
+      #Screenshot
+      ",Print, exec, grim -g \"$(slurp)\" - | wl-copy && notify-send \"System\" \"Screenshot copied to clipboard\""
+      "SHIFT,Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/-$(date +%Y%m%d-%H%M%S).png && notify-send \"System\" \"Screenshot saved\""
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging

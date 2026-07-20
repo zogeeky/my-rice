@@ -12,9 +12,9 @@
       label = {
         text = "$TIME";
         font_size = 96;
-        font_family = "JetBrains Mono";
+        font_family = "UbuntuSansMonoNerdFont";
         color = "rgba(235, 219, 178, 1.0)";
-        position = "0, 600";
+        position = "0, 250";
         halign = "center";
         walign = "center";
 
@@ -31,6 +31,10 @@
 
       input-field = [
         {
+          dots_size = "0.2";
+          halign = "center";
+          valgin = "center";
+          fail_text = "Wrong!";
           size = "200, 50";
           position = "0, -80";
           monitor = "";
@@ -38,8 +42,8 @@
           font_color = "rgb(235, 219, 178)";
           inner_color = "rgb(40, 40, 40)";
           outer_color = "rgb(60, 56, 54)";
-          outline_thickness = 5;
-          placeholder_text = "sussy baka";
+          outline_thickness = 2;
+          placeholder_text = "Password";
           shadow_passes = 1;
         }
       ];

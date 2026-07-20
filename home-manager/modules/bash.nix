@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 {
     programs.bash = {
         enable = true;
@@ -8,7 +8,7 @@
             ls = "ls --color=auto";
             n = "nvim";
             grep = "grep --color=auto";
-            homeup = "home-manager switch -f ~/my-rice/home-manager/home.nix";
+            homeup = "home-manager switch --flake ~/my-rice#${user}";
             glist = "nix profile history --profile /nix/var/nix/profiles/system";
             glist-del = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system";
         };

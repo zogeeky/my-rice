@@ -1,7 +1,7 @@
 {
 	description = "For me!";
 
-	inputs = {		
+	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
 		home-manager = {
@@ -18,23 +18,29 @@
 			{ hostname = "hashstop"; stateVersion = "26.05"; }
 		];
 
+		pkgs = import nixpkgs {
+			inherit system;
+			config.allowUnfree = true;
+			# overlays = [ ... ]; # сюда добавляй свои оверлеи, если появятся
+		};
+
 		makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
-			system = system;
 			specialArgs = { inherit inputs stateVersion hostname user; };
 			modules = [
 				./hosts/${hostname}/configuration.nix
+				# nixpkgs.hostPlatform и nixpkgs.pkgs (если нужно) задаются
+				# внутри самого configuration.nix, а не тут
 			];
 		};
 
 	in {
-		nixosConfigurations = nixpkgs.lib.foldl' (config: host: config // {
-			"${host.hostname}" = makeSystem {
-				inherit (host) hostname stateVersion;
-			};
-		}) {} hosts;
+		nixosConfigurations = builtins.listToAttrs (map (host: {
+			name = host.hostname;
+			value = makeSystem { inherit (host) hostname stateVersion; };
+		}) hosts);
 
 		homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages.${system};
+			inherit pkgs;
 			extraSpecialArgs = {
 				inherit inputs homeStateVersion user;
 			};

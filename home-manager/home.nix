@@ -1,3 +1,5 @@
+{ homeStateVersion, user, ... }:
+
 {
     imports = [
         ./modules
@@ -5,8 +7,10 @@
     ];
 
     home = {
-        username = "zogeeky";
-        homeDirectory = "/home/zogeeky";
-        stateVersion = "26.05";
+        username = user;
+        homeDirectory = "/home/${user}";
+        stateVersion = homeStateVersion;
     };
+
+    programs.home-manager.enable = true;
 }

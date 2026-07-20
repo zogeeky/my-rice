@@ -28,6 +28,7 @@
         yt-dlp
         zip
         nerd-fonts.ubuntu-sans
+        tree
 
         # Coding stuff
         go
@@ -39,6 +40,8 @@
         libnotify
         xdg-desktop-portal-gtk
         xdg-desktop-portal-hyprland
+        grim
+        slurp
 
         # Other
         nix-prefetch-scripts

@@ -41,5 +41,5 @@ sudo cp /etc/nixos/hardware-configuration ./
 cd my-rice
 git add .
 sudo nixos-rebuild switch --flake ./#<your-hostname>
-home-manager switch -f home-manager/home.nix
+home-manager switch .#<your-username>
 ```

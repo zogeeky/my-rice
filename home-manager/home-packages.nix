@@ -42,6 +42,7 @@
         xdg-desktop-portal-hyprland
         grim
         slurp
+        cava
 
         # Other
         nix-prefetch-scripts

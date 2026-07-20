@@ -1,4 +1,4 @@
-# Not For Everyone
+# 𝐍𝐢𝐱𝐎𝐒 𝐑𝐢𝐜𝐞
 
 1. **Clone**
 ```sh
@@ -43,3 +43,29 @@ git add .
 sudo nixos-rebuild switch --flake ./#<your-hostname>
 home-manager switch .#<your-username>
 ```
+
+7. **Enjoy**
+![img](image_2026-07-20_17-01.31.png)
+
+- - -
+
+## Keybinds
+| Key | Action |
+| --- | ------ |
+| Super + Return | Open the Terminal |
+| Super + Q | Close the Window |
+| Super + D | Dmenu |
+| Super + V | Clipboard |
+| Super + F | Floating mode |
+| Super + N | Notification history |
+| Super + L | Lock the sceen |
+
+## Software included
+- Neovim (lil bit customized ~~no lsp~~)
+- Chromium
+- Foot terminal
+- OBS Studio
+- MPV video player
+- Zathura pdf reader
+- Btop++ task manager
+- Obsidian

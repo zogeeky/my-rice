@@ -45,7 +45,7 @@ home-manager switch .#<your-username>
 ```
 
 7. **Enjoy**
-![img](image_2026-07-20_17-01.31.png)
+![img](preview.png)
 
 - - -
 

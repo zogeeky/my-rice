@@ -6,6 +6,7 @@
 	./eza.nix
 	./foot.nix
 	./git.nix
+    ./lazygit.nix
 	./hyprland
 	./neovim.nix
 	./ranger.nix

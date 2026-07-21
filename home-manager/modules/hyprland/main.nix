@@ -24,6 +24,7 @@
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "swaybg -m fill -i ~/Pictures/Wallpaper/m.png"
+        "waybar"
 #        "swaybg -m fill -i $(find ~/Pictures/Wallpaper -type f \\( -name '*.jpg' -o -name '*.png' -o -name '*.jpeg' \\) | shuf -n 1)"
       ];
 
